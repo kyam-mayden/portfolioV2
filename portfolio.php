@@ -17,16 +17,16 @@
             <a href="portfolio.php">Portfolio</a>
         </div>
         <div class="contact">
-            <a href="#" id="twitter">
+            <a href="https://twitter.com/KyamLeigh" id="twitter" target="_blank">
                 <img src="assets/contact/twitter.svg">
             </a>
-            <a href="#" id="linkedIn">
+            <a href="https://www.linkedin.com/in/kyam-harris-8715027a/" id="linkedIn" target="_blank">
                 <img src="assets/contact/linkedIn.svg">
             </a>
-            <a href="#" id="github">
+            <a href="https://github.com/marty-crane" id="github" target="_blank">
                 <img src="assets/contact/github.svg">
             </a>
-            <a href="#" id="email">
+            <a href="#" id="email" target="_blank">
                 <img src="assets/contact/email.png">
             </a>
 

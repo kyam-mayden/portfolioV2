@@ -1,0 +1,35 @@
+.focusOuter{
+    height:500px;
+}
+
+.focusOuter .portfolioItem{
+    width:800px;
+    height: 600px;
+}
+
+.focusOuter .portfolioItem img{
+    height: 400px;
+    width: 400px;
+    display:inline-block;
+}
+
+.focusText{
+    display:inline-block;
+    width: 45%;
+    height: 400px;
+    float:right;
+}
+
+.portfolioItem img,
+.portfolioItem div {
+    display: inline-block;
+    text-align:left;
+}
+
+.portfolioItem{
+    text-align:center;
+}
+
+.focusText .description{
+    font-size:1.1rem;
+}

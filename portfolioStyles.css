@@ -29,6 +29,11 @@
     font-size: 2rem;
 }
 
+.portfolioItem img{
+    height: 225px;
+    width: 225px;
+}
+
 .skillList{
     color:#41484F;
     font-size:1rem;

@@ -122,3 +122,8 @@ article p{
 .portfolioShowcase p{
     color:#41484F;
 }
+
+.portfolioShowcase img{
+    height: 225px;
+    width: 225px;
+}
