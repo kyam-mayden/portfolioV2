@@ -11,13 +11,13 @@
         <img src="assets/jumbo.jpg">
         <nav>
             <div class="interiorLinks">
-                <a href="#about">About</a>
-                <a href="#showcase">Showcase</a>
-                <a href="portfolio.php">Portfolio</a>
+                <a href="#about" class="hvr-underline-from-left">About</a>
+                <a href="#showcase" class="hvr-underline-from-left">Showcase</a>
+                <a href="portfolio.php" class="hvr-underline-from-left">Portfolio</a>
             </div>
             <div class="contact">
                 <a href="https://twitter.com/KyamLeigh" id="twitter" target="_blank">
-                    <img src="assets/contact/twitter.svg">
+                    <img src="assets/contact/twitter.svg" >
                 </a>
                 <a href="https://www.linkedin.com/in/kyam-harris-8715027a/" id="linkedIn" target="_blank">
                     <img src="assets/contact/linkedIn.svg">
