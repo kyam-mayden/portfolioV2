@@ -1,0 +1,23 @@
+.portfolioOuter{
+    height: 300px;
+    float: left;
+    width: 33.3%;
+}
+
+.portfolioItem{
+    background-color:#CDC6B2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:80%;
+    margin: 0 auto;
+    height: 300px;
+    box-shadow: 10px 10px 35px 0px rgba(0,0,0,0.75);
+}
+
+.portfolioItem a{
+    display: block;
+}
+
+.portfolioItem p{
+    color:#41484F;
+}

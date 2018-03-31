@@ -1,0 +1,124 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    background: rgb(170,167,152);
+    background: linear-gradient(90deg, rgba(170,167,152,1) 51%, rgba(65,72,79,1) 110%);
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width:100%;
+    z-index:5;
+}
+
+.interiorLinks {
+    width: 200px;
+    height: 100px;
+    display:inline-block;
+}
+
+.interiorLinks a{
+    display:block;
+    color: #0F131A;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+header,
+header img{
+    width: 100%;
+    max-height: 100vh;
+}
+
+.contact{
+    display:inline-block;
+    height:100px;
+    float:right;
+    width:70%;
+}
+
+main{
+    height: 750px;
+    position: relative;
+}
+
+.contact img{
+    float:right;
+    height: 80px;
+    width: 80px;
+    margin:10px;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main div h1{
+    font-size: 5rem;
+}
+
+.about section article{
+    background-color:#41484F;
+    height: 230px;
+    width: 55%;
+    opacity: 0.7;
+    box-shadow: 10px 10px 35px 0px rgba(0,0,0,0.75);
+}
+
+article p{
+    width:90%;
+    margin:10px auto;
+    color: white;
+    font-size: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.left{
+    margin-bottom:10px;
+}
+
+.right{
+    float:right;
+}
+
+.skills{
+    height:100px;
+    clear:both;
+}
+
+.skills div{
+    display: inline-block;
+    width:15%;
+    margin: 0 auto;
+}
+
+.skills div img{
+    height: 100px;
+}
+
+.showcaseOuter{
+    height: 400px;
+    float: left;
+    width: 33.3%;
+}
+
+.portfolioShowcase{
+    background-color:#CDC6B2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:80%;
+    margin: 0 auto;
+    height: 500px;
+    box-shadow: 10px 10px 35px 0px rgba(0,0,0,0.75);
+}
+
+.portfolioShowcase a{
+    display: block;
+}
+
+.portfolioShowcase p{
+    color:#41484F;
+}
