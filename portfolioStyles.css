@@ -1,14 +1,22 @@
+.gridContainer{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+}
+
 .portfolioOuter{
     height: 300px;
-    float: left;
-    width: 33.3%;
+
 }
 
 .portfolioItem{
     background-color:#CDC6B2;
     overflow: hidden;
     text-overflow: ellipsis;
-    width:80%;
+    width:280px;
     margin: 0 auto;
     height: 300px;
     box-shadow: 10px 10px 35px 0px rgba(0,0,0,0.75);
@@ -16,8 +24,35 @@
 
 .portfolioItem a{
     display: block;
+    color:#41484F;
+    text-decoration: none;
+    font-size: 2rem;
 }
 
-.portfolioItem p{
+.skillList{
     color:#41484F;
+    font-size:1rem;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    width:260px;
+    padding: 0 10px;
+    margin: 0;
+}
+
+#showcase{
+    margin-bottom:20px;
+}
+
+#showcase h1{
+    margin-bottom:10px;
+}
+
+.searchBar input{
+    height: 50px;
+    font-size:2rem;
+}
+
+#skillsSearch{
+    width:300px;
 }

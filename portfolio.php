@@ -39,24 +39,66 @@
         <h1>
             Portfolio
         </h1>
+        <form name="search" class="searchBar">
+            <input type="text" id ="skillsSearch" placeholder="Search by skill..." />
+            <input type="submit">
+        </form>
     </div>
-    <section class="container">
+    <section class="gridContainer">
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
+                <p class="skillList"> LIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSv
+                </p>
             </div>
         </article>
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
+                <p class="skillList"> LIST OF SKILLS
+                </p>
             </div>
         </article>
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
+                <p class="skillList"> LIST OF SKILLS
+                </p>
+            </div>
+        </article>
+        <article class="portfolioOuter">
+            <div class="portfolioItem">
+                <img src="assets/portfolio/download.jpeg"/>
+                <a href="#">Portfolio Item</a>
+                <p class="skillList"> LIST OF SKILLS
+                </p>
+            </div>
+        </article>
+        <article class="portfolioOuter">
+            <div class="portfolioItem">
+                <img src="assets/portfolio/download.jpeg"/>
+                <a href="#">Portfolio Item</a>
+                <p class="skillList"> LIST OF SKILLS
+                </p>
+            </div>
+        </article>
+        <article class="portfolioOuter">
+            <div class="portfolioItem">
+                <img src="assets/portfolio/download.jpeg"/>
+                <a href="#">Portfolio Item</a>
+                <p class="skillList"> LIST OF SKILLS
+                </p>
+            </div>
+        </article>
+        <article class="portfolioOuter">
+            <div class="portfolioItem">
+                <img src="assets/portfolio/download.jpeg"/>
+                <a href="#">Portfolio Item</a>
+                <p class="skillList"> LIST OF SKILLS
+                </p>
             </div>
         </article>
 
