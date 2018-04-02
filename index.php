@@ -25,7 +25,7 @@
                 <a href="https://github.com/marty-crane" id="github" target="_blank">
                     <img src="assets/contact/github.svg">
                 </a>
-                <a href="#" id="email" target="_blank">
+                <a href="mailto:kyam.lh@googlemail.com?Subject=Portfolio.." id="email" target="_blank">
                     <img src="assets/contact/email.png">
                 </a>
             </div>
@@ -70,9 +70,7 @@
     </main>
     <main class="showcase">
         <div class="container" id="showcase">
-            <h1>
-                Showcase
-            </h1>
+            <h1>Showcase</h1>
         </div>
         <section class="container">
             <article class="showcaseOuter">

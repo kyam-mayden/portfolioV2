@@ -107,6 +107,7 @@ article p{
 }
 
 .left{
+    float:left;
     margin-bottom:10px;
 }
 

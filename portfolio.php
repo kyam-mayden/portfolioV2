@@ -12,9 +12,8 @@
     <img src="assets/jumbo.jpg">
     <nav>
         <div class="interiorLinks">
-            <a href="index.php">About</a>
-            <a href="#showcase">Showcase</a>
-            <a href="portfolio.php">Portfolio</a>
+            <a href="index.php" class="hvr-underline-from-left">Home</a>
+            <a href="#showcase" class="hvr-underline-from-left">Showcase</a>
         </div>
         <div class="contact">
             <a href="https://twitter.com/KyamLeigh" id="twitter" target="_blank">
@@ -26,14 +25,13 @@
             <a href="https://github.com/marty-crane" id="github" target="_blank">
                 <img src="assets/contact/github.svg">
             </a>
-            <a href="#" id="email" target="_blank">
+            <a href="mailto:kyam.lh@googlemail.com?Subject=Portfolio.." id="email" target="_blank">
                 <img src="assets/contact/email.png">
             </a>
 
         </div>
     </nav>
 </header>
-
 <main class="showcase">
     <div class="container" id="showcase">
         <h1>
@@ -57,54 +55,45 @@
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
-                <p class="skillList"> LIST OF SKILLS
-                </p>
+                <p class="skillList"> LIST OF SKILLS</p>
             </div>
         </article>
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
-                <p class="skillList"> LIST OF SKILLS
-                </p>
+                <p class="skillList"> LIST OF SKILLS</p>
             </div>
         </article>
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
-                <p class="skillList"> LIST OF SKILLS
-                </p>
+                <p class="skillList"> LIST OF SKILLS</p>
             </div>
         </article>
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
-                <p class="skillList"> LIST OF SKILLS
-                </p>
+                <p class="skillList"> LIST OF SKILLS</p>
             </div>
         </article>
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
-                <p class="skillList"> LIST OF SKILLS
-                </p>
+                <p class="skillList"> LIST OF SKILLS</p>
             </div>
         </article>
         <article class="portfolioOuter">
             <div class="portfolioItem">
                 <img src="assets/portfolio/download.jpeg"/>
                 <a href="#">Portfolio Item</a>
-                <p class="skillList"> LIST OF SKILLS
-                </p>
+                <p class="skillList"> LIST OF SKILLS</p>
             </div>
         </article>
-
     </section>
-
 </main>
-
 </body>
 </html>
