@@ -1,8 +1,6 @@
 <?php
 require_once('displayFunctions.php');
 $static = fillStatic($db);
-
-
 ?>
 <!DOCTYPE html>
 <html>
