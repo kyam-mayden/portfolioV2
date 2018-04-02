@@ -80,9 +80,9 @@ function getSkills($db, $id) {
 function buildSkills($db,$id) {
     $string="";
     foreach(getSkills($db,$id) as $skill) {
-        $string.=$skill['skill']." ";
+        $string.=$skill['skill'].", ";
     }
-    return $string;
+    return substr($string, 0,-2);
 }
 
 
@@ -93,7 +93,10 @@ function buildPortfolio($db) {
         $string.="<article class=\"portfolioOuter\">
             <div class=\"portfolioItem\">
                 <img src=". $item['path'] ." alt=' ". $item['alt'] ."'>
-                <a href='focus.php'>". $item['name'] ."</a>
+                <form method='get' action='focus.php'>
+    <input type='hidden' name='id' value=". $item['id']. ">
+    <input class='focusBuilder' type=\"submit\" value=". $item['name'] .">
+</form>
                 <p class=\"skillList\">". buildSkills($db,$item['id']) ."
                 </p>
             </div>
@@ -102,8 +105,13 @@ function buildPortfolio($db) {
     return $string;
 }
 
-?>
-
-<form>
-
-</form>
+function buildFocus($db,$id) {
+    $query=$db->prepare("SELECT `portfolio`.`id`,`portfolio`.`name`,`portfolio`.`description`,`images`.`path`, `images`.`alt`,`portfolio`.`github`,`portfolio`.`url`,`portfolio`.`date`
+                         FROM `portfolio`
+                         LEFT JOIN `images`
+                         ON `portfolio`.`ID`
+                         =`images`.`portfolioItem`
+                         WHERE `portfolio`.`id`=$id;");
+    $query->execute();
+    return $query->fetch();
+}

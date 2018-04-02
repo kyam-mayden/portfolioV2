@@ -1,8 +1,7 @@
 <?php
 require_once('displayFunctions.php');
-$static = fillStatic($db);
-
-
+$focus=buildFocus($db,$_GET['id']);
+$skills=buildSkills($db,$_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +9,7 @@ $static = fillStatic($db);
 <head>
 	<title>Kyam Harris | Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
-	<link rel="stylesheet" type="text/css" href="Styles.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="portfolioStyles.css">
     <link rel="stylesheet" type="text/css" href="focus.css">
 
@@ -46,18 +45,24 @@ $static = fillStatic($db);
             Focus
         </h1>
     </div>
-    <section class="Container">
-        <article class="focusOuter">
-            <div class="portfolioItem">
-                <h1>Portfolio Item</h1>
-                <img src="assets/portfolio/download.jpeg"/>
-                <div class="focusText">
-                    <p class="skills"> LIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSv</p>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum nibh sit amet ligula porttitor ultricies. Etiam faucibus rhoncus sapien, sed tincidunt nisi interdum nec. Suspendisse vitae tempor augue. Quisque placerat lectus eu dolor fermentum malesuada. In nec mollis sapien, eget interdum lectus. Praesent ac eleifend turpis, quis auctor tortor. Integer at nulla dui. Ut sagittis, justo vel convallis dapibus, metus augue euismod magna, quis porttitor nunc odio convallis nisi. Cras fringilla, ligula at gravida eleifend, est risus cursus leo, nec sagittis ante diam volutpat nunc. Curabitur pellentesque orci gravida elit tristique aliquam. Vestibulum risus augue, elementum vel ante nec.</p>
-
+    <section class="container">
+            <article class="focusItem">
+                <h1 id="title"> <?php echo $focus['name']?> </h1>
+                <h3><?php echo $focus['date']?></h3>
+                <div class="links">
+                    <a href="<?php echo $focus['github']?>" class="portfolioGithub" id="github" target="_blank">
+                        <img src="assets/contact/github.svg">
+                    </a>
+                    <a href="<?php echo $focus['url']?>" class="portfolioGithub" id="github" target="_blank">
+                        <img src="assets/contact/url.ico">
+                    </a>
                 </div>
-            </div>
-        </article>
+                <img class='portfolioImg' src="<?php echo $focus['path']?>" alt="<?php echo $focus['alt']?>"/>
+                <div class="focusText">
+                    <p class="skills"><?php echo $skills?></p>
+                    <p class="description"><?php echo $focus['description']?></p>
+                </div>
+            </article>
     </section>
 </main>
 </body>

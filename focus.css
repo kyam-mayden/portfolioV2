@@ -1,16 +1,7 @@
-.focusOuter{
-    height:500px;
-}
 
-.focusOuter .portfolioItem{
-    width:800px;
-    height: 600px;
-}
-
-.focusOuter .portfolioItem img{
+.focusItem .portfolioImg{
     height: 400px;
     width: 400px;
-    display:inline-block;
 }
 
 .focusText{
@@ -20,16 +11,36 @@
     float:right;
 }
 
-.portfolioItem img,
-.portfolioItem div {
+.focusItem .portfolioImg,
+.focusItem .focusText {
     display: inline-block;
     text-align:left;
 }
 
-.portfolioItem{
+.focusItem{
     text-align:center;
 }
 
 .focusText .description{
-    font-size:1.1rem;
+    font-size:1.5rem;
+}
+
+.portfolioGithub img{
+    height: 50px;
+    width: 50px;
+}
+
+.links{
+    height: 60px;
+    width:200px;
+    margin:10px auto;
+}
+
+.links a{
+    margin: 0 30px;
+    text-decoration: none;
+}
+
+#title{
+    margin-bottom: 20px;
 }
