@@ -1,8 +1,6 @@
 <?php
 require_once('displayFunctions.php');
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -34,11 +32,10 @@ require_once('displayFunctions.php');
             <a href="mailto:kyam.lh@googlemail.com?Subject=Portfolio.." id="email" target="_blank">
                 <img src="assets/contact/email.png">
             </a>
-
         </div>
     </nav>
 </header>
-<main class="showcase">
+<main id="portfolio">
     <div class="container" id="showcase">
         <h1>
             Portfolio
@@ -50,56 +47,6 @@ require_once('displayFunctions.php');
     </div>
     <section class="gridContainer">
         <?php echo buildPortfolio($db) ?>
-<!--        <article class="portfolioOuter">-->
-<!--            <div class="portfolioItem">-->
-<!--                <img src="assets/portfolio/download.jpeg"/>-->
-<!--                <a href="#">Portfolio Item</a>-->
-<!--                <p class="skillList"> LIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSLIST OF SKILLSv-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        </article>-->
-<!--        <article class="portfolioOuter">-->
-<!--            <div class="portfolioItem">-->
-<!--                <img src="assets/portfolio/download.jpeg"/>-->
-<!--                <a href="#">Portfolio Item</a>-->
-<!--                <p class="skillList"> LIST OF SKILLS</p>-->
-<!--            </div>-->
-<!--        </article>-->
-<!--        <article class="portfolioOuter">-->
-<!--            <div class="portfolioItem">-->
-<!--                <img src="assets/portfolio/download.jpeg"/>-->
-<!--                <a href="#">Portfolio Item</a>-->
-<!--                <p class="skillList"> LIST OF SKILLS</p>-->
-<!--            </div>-->
-<!--        </article>-->
-<!--        <article class="portfolioOuter">-->
-<!--            <div class="portfolioItem">-->
-<!--                <img src="assets/portfolio/download.jpeg"/>-->
-<!--                <a href="#">Portfolio Item</a>-->
-<!--                <p class="skillList"> LIST OF SKILLS</p>-->
-<!--            </div>-->
-<!--        </article>-->
-<!--        <article class="portfolioOuter">-->
-<!--            <div class="portfolioItem">-->
-<!--                <img src="assets/portfolio/download.jpeg"/>-->
-<!--                <a href="#">Portfolio Item</a>-->
-<!--                <p class="skillList"> LIST OF SKILLS</p>-->
-<!--            </div>-->
-<!--        </article>-->
-<!--        <article class="portfolioOuter">-->
-<!--            <div class="portfolioItem">-->
-<!--                <img src="assets/portfolio/download.jpeg"/>-->
-<!--                <a href="#">Portfolio Item</a>-->
-<!--                <p class="skillList"> LIST OF SKILLS</p>-->
-<!--            </div>-->
-<!--        </article>-->
-<!--        <article class="portfolioOuter">-->
-<!--            <div class="portfolioItem">-->
-<!--                <img src="assets/portfolio/download.jpeg"/>-->
-<!--                <a href="#">Portfolio Item</a>-->
-<!--                <p class="skillList"> LIST OF SKILLS</p>-->
-<!--            </div>-->
-<!--        </article>-->
     </section>
 </main>
 </body>

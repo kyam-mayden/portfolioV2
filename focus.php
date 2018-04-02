@@ -35,7 +35,6 @@ $skills=buildSkills($db,$_GET['id']);
             <a href="mailto:kyam.lh@googlemail.com?Subject=Portfolio.." id="email" target="_blank">
                 <img src="assets/contact/email.png">
             </a>
-
         </div>
     </nav>
 </header>

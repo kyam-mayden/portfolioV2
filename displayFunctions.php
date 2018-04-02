@@ -47,9 +47,9 @@ function buildShowcase($db) {
                 <div class='portfolioShowcase'>
                     <img class='portfolioPicture' src=". $showcase['path'] ." alt=". $showcase['alt']. ">
                     <form method='get' action='focus.php'>
-    <input type='hidden' name='id' value=". $showcase['id']. ">
-    <input class='focusBuilder' type=\"submit\" value=". $showcase['name'] .">
-</form>
+                    <input type='hidden' name='id' value=". $showcase['id']. ">
+                    <input class='focusBuilder' type=\"submit\" value=". $showcase['name'] .">
+                    </form>
                     <p>".$showcase['description']."</p>
                     <a href=".$showcase['github']." class=\"portfolioGithub\" id=\"github\" target=\"_blank\">
                         <img src=\"assets/contact/github.svg\">

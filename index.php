@@ -42,10 +42,10 @@ $static = fillStatic($db);
             </h1>
         </div>
         <section class="container">
-            <article class="left">
+            <article class="right">
                 <p><?php echo $static['about1'];?></p>
             </article>
-            <article class="right">
+            <article class="left">
                 <p><?php echo $static['about2'];?></p>
             </article>
         </section>
