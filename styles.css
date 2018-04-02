@@ -140,9 +140,9 @@ article p{
     background-color:#CDC6B2;
     overflow: hidden;
     text-overflow: ellipsis;
-    width:80%;
+    width:300px;
     margin: 0 auto;
-    height: 500px;
+    height: 550px;
     box-shadow: 10px 10px 35px 0px rgba(0,0,0,0.75);
 }
 
@@ -151,10 +151,17 @@ article p{
 }
 
 .portfolioShowcase p{
+    display:block;
     color:#41484F;
 }
 
-.portfolioShowcase img{
+.portfolioShowcase .portfolioPicture{
     height: 225px;
     width: 225px;
+}
+
+.portfolioShowcase .portfolioGithub{
+    height: 50px;
+    width: 50px;
+    margin:0 auto;
 }
