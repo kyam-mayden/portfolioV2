@@ -7,6 +7,10 @@
     grid-row-gap: 20px;
 }
 
+#portfolioTitle {
+    padding:30px;
+}
+
 #portfolio{
     overflow:visible;
 }

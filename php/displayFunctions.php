@@ -48,6 +48,7 @@ function getShowcase($db) {
                          ON `featured`.`portfolioID`
                          =`images`.`portfolioItem`
                          WHERE `portfolio`.`deleted`=0
+                         AND `images`.`deleted`=0
                          ORDER BY `portfolio`.`date` DESC
                          LIMIT 3;");
     $query->execute();
@@ -90,6 +91,7 @@ function getPortfolio($db) {
                          ON `portfolio`.`ID`
                          =`images`.`portfolioItem`
                          WHERE `portfolio`.`deleted`=0
+                         AND `images`.`deleted`=0
                          ORDER BY `portfolio`.`date` DESC;");
     $query->execute();
     return $query->fetchAll();
@@ -156,7 +158,8 @@ function buildFocus($db, $id) {
                          LEFT JOIN `images`
                          ON `portfolio`.`ID`
                          =`images`.`portfolioItem`
-                         WHERE `portfolio`.`id`=$id;");
+                         WHERE `portfolio`.`id`=$id
+                         AND `images`.`deleted`=0;");
     $query->execute();
     return $query->fetch();
 }

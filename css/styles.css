@@ -54,6 +54,7 @@ nav{
 }
 
 
+
 header,
 header img{
     width: 100%;
@@ -78,6 +79,11 @@ main{
     height: 80px;
     width: 80px;
     margin:10px;
+    opacity: 0.7;
+}
+
+.contact img:hover{
+    opacity:1;
 }
 
 .container{

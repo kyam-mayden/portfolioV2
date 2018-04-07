@@ -1,14 +1,14 @@
 <?php
-require_once('displayFunctions.php');
+require_once('php/displayFunctions.php');
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Kyam Harris | Portfolio</title>
-	<link rel="stylesheet" type="text/css" href="normalize.css">
-	<link rel="stylesheet" type="text/css" href="Styles.css">
-    <link rel="stylesheet" type="text/css" href="portfolioStyles.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/portfolioStyles.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +17,7 @@ require_once('displayFunctions.php');
     <nav>
         <div class="interiorLinks">
             <a href="index.php" class="hvr-underline-from-left">Home</a>
-            <a href="#showcase" class="hvr-underline-from-left">Showcase</a>
+            <a href="#portfolio" class="hvr-underline-from-left">Portfolio</a>
         </div>
         <div class="contact">
             <a href="https://twitter.com/KyamLeigh" id="twitter" target="_blank">
@@ -36,8 +36,8 @@ require_once('displayFunctions.php');
     </nav>
 </header>
 <main id="portfolio">
-    <div class="container" id="showcase">
-        <h1>
+    <div class="container">
+        <h1 id="portfolioTitle">
             Portfolio
         </h1>
 <!--        <form name="search" class="searchBar">-->
