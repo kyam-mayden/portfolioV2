@@ -159,6 +159,10 @@ article p{
 
 }
 
+#showcase h1{
+    padding: 60px;
+}
+
 .portfolioShowcase a{
     display: block;
 }
