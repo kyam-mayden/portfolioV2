@@ -40,9 +40,7 @@ $skills=buildSkills($db,$_GET['id']);
 </header>
 <main class="showcase">
     <div class="container" id="showcase">
-        <h1>
-            Focus
-        </h1>
+        <h1>Focus</h1>
     </div>
     <section class="container">
             <article class="focusItem">

@@ -70,7 +70,7 @@ header img{
 main{
     position: relative;
     overflow:hidden;
-    height: 105vh;
+    height: 700px;
 }
 
 .contact img{
@@ -88,7 +88,8 @@ main{
 
 main div h1{
     font-size: 5rem;
-    margin-top:100px;
+    padding-top:0px;
+    margin:0;
 }
 
 .about section article{
