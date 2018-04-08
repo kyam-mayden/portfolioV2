@@ -86,3 +86,32 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+@media screen and (max-width:640px) {
+    .gridContainer{
+        grid-template-columns: 1fr;
+    }
+
+
+    .portfolioItem {
+        width:300px;
+    }
+
+    .portfolioItem img{
+        width: 95%;
+    }
+
+    .portfolioItem .skillList {
+        width: 280px;
+    }
+
+    .portfolioItem form input{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width:1300px) {
+    .gridContainer{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

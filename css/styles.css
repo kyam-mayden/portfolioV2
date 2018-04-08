@@ -2,7 +2,7 @@ body{
     font-family: 'Oswald', sans-serif;
     background: rgb(170,167,152);
     background: linear-gradient(90deg, rgba(170,167,152,1) 51%, rgba(65,72,79,1) 110%);
-    min-width:320px;
+    min-width:350px;
 }
 
 nav{
@@ -236,5 +236,68 @@ article p{
 }
 
 @media screen and (max-width:768px) {
+    nav {
+        position: absolute;
+    }
 
+    .contact{
+        width: 100px;
+    }
+
+    .contact img{
+        height:70px;
+        width: 70px;
+    }
+
+    .about section .right,
+    .about section .left {
+        width: 70%;
+    }
+
+    .right p,
+    .left p {
+        font-size:1.4rem;
+    }
+
+    .skills div img{
+        height: 80px;
+        position: relative;
+        top:30px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .contact img{
+        height:50px;
+        width: 50px;
+    }
+
+    .right p,
+    .left p {
+        font-size:1.3rem;
+    }
+
+    main div h1 {
+        font-size: 4rem;
+    }
+
+    .about section .right,
+    .about section .left {
+        width: 90%;
+    }
+
+    .skills div img{
+        height: 60px;
+        top:50px;
+    }
+
+    main.about {
+        height:650px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    div.contact{
+        display:none;
+    }
 }
