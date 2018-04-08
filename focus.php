@@ -39,7 +39,7 @@ $skills=buildSkills($db,$_GET['id']);
     </nav>
 </header>
 <main class="showcase">
-    <div class="container" id="showcase">
+    <div class="container">
         <h1>Focus</h1>
     </div>
     <section class="container">

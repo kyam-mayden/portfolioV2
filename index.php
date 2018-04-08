@@ -63,9 +63,6 @@ $static = fillStatic($db);
                 <img src="assets/skills/js.png"/>
             </div>
             <div class="skill">
-                <img src="assets/skills/mysql.png"/>
-            </div>
-            <div class="skill">
                 <img src="assets/skills/csm.png"/>
             </div>
         </section>
