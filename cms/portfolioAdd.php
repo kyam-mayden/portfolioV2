@@ -5,9 +5,24 @@ require_once('../php/cmsLogic.php');
 
 $imgArr = getImgDropDown($db);
 
-if(!empty($_POST['name'])){
+$maxName=30;
+$maxUrl=300;
+$maxDescription=300;
+if(!empty ($_POST['name'])
+    && !(strlen($_POST['name'])>$maxName)
+    && !(strlen($_POST['url'])>$maxUrl)
+    && !(strlen($_POST['description'])>$maxDescription)
+    && !(strlen($_POST['github'])>$maxUrl)) {
     addProject($_POST,$db);
-} else{}
+} elseif (strlen($_POST['name'])>$maxName) {
+    echo "Name too long";
+} elseif (strlen($_POST['url'])>$maxUrl) {
+    echo "Project URL too long";
+} elseif (strlen($_POST['description'])>$maxDescription) {
+    echo "Description too long";
+} elseif (strlen($_POST['github'])>$maxUrl) {
+    echo "Github URL too long";
+} else{};
 
 ?>
 <!DOCTYPE html>

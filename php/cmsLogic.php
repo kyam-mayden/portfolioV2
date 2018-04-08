@@ -3,6 +3,14 @@ require_once('../php/displayFunctions.php');
 
 $db = connectDatabase();
 
+function sanitizeString($string) {
+    return filter_var($string, FILTER_SANITIZE_STRING);
+}
+
+function sanitizeUrl($url) {
+    return filter_var($url, FILTER_SANITIZE_URL);
+}
+
 //get abouts
 function getAbout (PDO $db):array {
     $query=$db->prepare("SELECT `name`, `content` FROM `static` ORDER BY `id` ASC;");
@@ -14,13 +22,13 @@ function getAbout (PDO $db):array {
 
 function updateAbout (array $postData,PDO $db) {
     $query = $db->prepare("UPDATE `static` SET `content`= :title WHERE  `id`=1");
-    $query->bindValue(':title', $postData['title']);
+    $query->bindValue(':title', sanitizeString($postData['title']));
     $query->execute();
     $query = $db->prepare("UPDATE `static` SET `content`= :about1 WHERE  `id`=2");
-    $query->bindValue(':about1', $postData['about1']);
+    $query->bindValue(':about1', sanitizeString($postData['about1']));
     $query->execute();
     $query = $db->prepare("UPDATE `static` SET `content`= :about2 WHERE  `id`=3");
-    $query->bindValue(':about2', $postData['about2']);
+    $query->bindValue(':about2', sanitizeString($postData['about2']));
     $query->execute();
 }
 
@@ -43,7 +51,7 @@ function getImgDropDown (PDO $db):array {
 function makeDropDown (array $items): string {
     $dropDownString = "";
     foreach ($items as $item) {
-        $dropDownString .= '<option value="' . $item['id'] . '">' . $item['path'] . '</option>';
+        $dropDownString .= '<option value="' . $item['id'] . '">' . $item['name'] . '</option>';
     }
     return $dropDownString;
 }
@@ -52,19 +60,35 @@ function addProject($postData, $db) {
     $query = $db ->prepare("INSERT INTO `portfolio` (`name`, `url`, `description`, `github`,`date`) 
                             VALUES (:name, :url, :description, :github, :date);");
     if(array_key_exists('name',$postData)) {
-        $query->bindValue(':name', $postData['name']);
+        $query->bindValue(':name', sanitizeString($postData['name']));
     };
     if(array_key_exists('url',$postData)) {
-        $query->bindValue(':url', $postData['url']);
+        $query->bindValue(':url', sanitizeUrl($postData['url']));
     };
     if(array_key_exists('description',$postData)) {
-        $query->bindValue(':description', $postData['description']);
+        $query->bindValue(':description', sanitizeString($postData['description']));
     };
     if(array_key_exists('github',$postData)) {
-        $query->bindValue(':github', $postData['github']);
+        $query->bindValue(':github', sanitizeUrl($postData['github']));
     };
     if(array_key_exists('date',$postData)) {
         $query->bindValue(':date', $postData['date']);
     };
     $query->execute();
+}
+
+/**
+ * Gets portfolio items names from DB and turns into an array
+ *
+ * @param $db PDO to select from
+ * @return array of pf item names
+ */
+function portfolioList (PDO $db):array {
+    $query=$db->prepare("SELECT `id`, `name` FROM `portfolio` WHERE `deleted` = 0;");
+    $query->execute();
+    return $query->fetchall();
+}
+
+function getProject($postData, $db) {
+
 }
