@@ -301,3 +301,19 @@ article p{
         display:none;
     }
 }
+
+@media screen and (min-width:1300px) {
+    .skills .skill img{
+        height: 120px;
+        top:120px;
+    }
+
+    .portfolioShowcase{
+        width: 300px;
+    }
+
+    .portfolioShowcase p{
+        font-size: 1.2rem;
+        height: 100px;
+    }
+}
