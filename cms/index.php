@@ -15,5 +15,7 @@ require_once('../php/cmsLogic.php');
     <a href="about.php">Edit About section</a>
     <a href="portfolioAdd.php">Add a project</a>
     <a href="portfolioEdit.php">Edit a project</a>
+    <a href="portfolioEdit.php">Sort out some images</a>
+    <a href="portfolioEdit.php">un fuck-up the skills section</a>
 </body>
 </html>

@@ -7,14 +7,19 @@ $maxTitle=30;
 $maxAbout=220;
 
 if(!empty($_POST['title']) && !(strlen($_POST['title'])>$maxTitle) && !(strlen($_POST['about1'])>$maxAbout) && !(strlen($_POST['about2'])>$maxAbout)) {
-    echo "it's working";
-//    updateAbout($_POST,$db);
+    updateAbout($_POST,$db);
 } else {
-    echo 'reject';
+    if (strlen($_POST['title'])>$maxTitle) {
+        echo "title length too long";
+    }
+    elseif (strlen($_POST['about1'])>$maxAbout) {
+        echo "about me 1 length too long";
+    }
+    elseif (strlen($_POST['about2'])>$maxAbout) {
+        echo "about me 2 length too long";
+    }
+    else{}
 }
-
-
-
 
 //var_dump(getAbout($db));
 $title = getAbout($db)[0];
