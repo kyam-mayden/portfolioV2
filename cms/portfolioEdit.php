@@ -5,7 +5,9 @@ require_once('../php/cmsLogic.php');
 
 $projectArray=portfolioList($db);
 
-var_dump($_POST);
+$projectFill=getProject($_POST,$db);
+
+//var_dump($projectFill);
 
 ?>
 
@@ -17,7 +19,7 @@ var_dump($_POST);
 </head>
 <body>
 <a href="index.php">back to main page</a>
-<h1>Add some stuff</h1>
+<h1>Edit some stuff</h1>
 <div>
     <form method="POST" action="portfolioEdit.php">
         <label for="projectSelect">Select project</label>
@@ -26,27 +28,28 @@ var_dump($_POST);
         </select>
         <input type="submit">
     </form>
-    <form method="POST" action="portfolioAdd.php">
-        <input type="hidden" name="id" value="ID FROM ARRAY">
+    <form method="POST" action="portfolioEdit.php">
+        <input type="hidden" name="id" value="<?php echo $projectFill['id']?>" >
         <div>
             <label for="name">Project Name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<?php echo $projectFill['name']?>">
         </div>
         <div>
             <label for="url">URL</label>
-            <input type="text" name="url">
+            <input type="text" name="url" value="<?php echo $projectFill['url']?>">
         </div>
         <div>
             <label for="description">Description</label>
-            <textarea cols="60" rows="6" type="text" name="description"></textarea>
+            <textarea cols="60" rows="6" type="text" name="description"><?php echo trim($projectFill['description'])?>
+            </textarea>
         </div>
         <div>
             <label for="github">Github URL</label>
-            <input type="text" name="github">
+            <input type="text" name="github" value="<?php echo $projectFill['github']?>">
         </div>
         <div>
             <label for="date">Creation date</label>
-            <input type="date" name="date">
+            <input type="date" name="date"  value="<?php echo $projectFill['date']?>">
         </div>
         <input type="submit">
     </form>

@@ -90,5 +90,9 @@ function portfolioList (PDO $db):array {
 }
 
 function getProject($postData, $db) {
-
+    $query = $db->prepare("SELECT `id`,`name`,`url`,`description`,`github`,`date` 
+                           FROM `portfolio` WHERE `id` = :id;");
+    $query->bindParam(':id', $postData['projectSelect']);
+    $query->execute();
+    return $query->fetch();
 }
