@@ -11,6 +11,11 @@ function sanitizeUrl($url) {
     return filter_var($url, FILTER_SANITIZE_URL);
 }
 
+function sanitizeNum($num) {
+    return filter_var($num, FILTER_SANITIZE_INT);
+
+}
+
 //get abouts
 function getAbout (PDO $db):array {
     $query=$db->prepare("SELECT `name`, `content` FROM `static` ORDER BY `id` ASC;");
@@ -95,4 +100,26 @@ function getProject($postData, $db) {
     $query->bindParam(':id', $postData['projectSelect']);
     $query->execute();
     return $query->fetch();
+}
+
+function updateProject($postData, $db) {
+    $query = $db->prepare("REPLACE `portfolio` (`id`,`name`,`url`,`description`,`github`,`date`)
+                          VALUES(:id, :name, :url, :description, :github, :date);");
+    $query->bindValue(':id', sanitizeNum($postData['id']));
+    if(array_key_exists('name',$postData)) {
+        $query->bindValue(':name', sanitizeString($postData['name']));
+    };
+    if(array_key_exists('url',$postData)) {
+        $query->bindValue(':url', sanitizeUrl($postData['url']));
+    };
+    if(array_key_exists('description',$postData)) {
+        $query->bindValue(':description', sanitizeString($postData['description']));
+    };
+    if(array_key_exists('github',$postData)) {
+        $query->bindValue(':github', sanitizeUrl($postData['github']));
+    };
+    if(array_key_exists('date',$postData)) {
+        $query->bindValue(':date', $postData['date']);
+    };
+    $query->execute();
 }
