@@ -123,3 +123,10 @@ function updateProject($postData, $db) {
     };
     $query->execute();
 }
+
+function deleteProject($postData, $db){
+    $project=$postData['projectSelect'];
+    $query = $db->prepare("UPDATE `portfolio` SET `deleted`=1 WHERE `id`=:id;");
+    $query->bindParam(':id', $project);
+    $query->execute();
+}

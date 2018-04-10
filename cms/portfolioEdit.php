@@ -11,7 +11,7 @@ $projectArray=portfolioList($db);
 
 $projectFill=getProject($_POST,$db);
 
-var_dump($_POST);
+//var_dump($_POST);
 
 ?>
 
@@ -44,8 +44,7 @@ var_dump($_POST);
         </div>
         <div>
             <label for="description">Description</label>
-            <textarea cols="60" rows="6" type="text" name="description"><?php echo trim($projectFill['description'])?>
-            </textarea>
+            <textarea cols="60" rows="6" type="text" name="description"><?php echo trim($projectFill['description'])?></textarea>
         </div>
         <div>
             <label for="github">Github URL</label>
