@@ -12,7 +12,7 @@ function sanitizeUrl($url) {
 }
 
 function sanitizeNum($num) {
-    return filter_var($num, FILTER_SANITIZE_INT);
+    return filter_var($num, FILTER_SANITIZE_NUMBER_INT);
 
 }
 
