@@ -125,12 +125,14 @@ function updateProject($postData, $db) {
 }
 
 function deleteProject($postData, $db){
-    $project=$postData['projectSelect'];
     $query = $db->prepare("UPDATE `portfolio` SET `deleted`=1 WHERE `id`=:id;");
-    $query->bindParam(':id', $project);
+    if(array_key_exists('projectSelect', $postData)) {
+        $query->bindParam(':id', $postData['projectSelect']);
+    }
     $query->execute();
+    return "project id:" .$postData['projectSelect'] . " deleted";
 }
 
-function getImagaes($db) {
+function getImages($db) {
 
 }

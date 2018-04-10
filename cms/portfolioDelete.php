@@ -3,7 +3,8 @@ session_start();
 require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
 
-deleteProject($_POST, $db);
+if(array_key_exists('projectSelect', $_POST)) {
+    echo deleteProject($_POST, $db);}
 
 $projectArray=portfolioList($db);
 ?>

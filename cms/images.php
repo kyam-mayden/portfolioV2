@@ -13,9 +13,9 @@ require_once('../php/cmsLogic.php');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Images lol</title>
     <link rel="stylesheet" type="text/css" href="../css/cmsStyles.css">
-
 </head>
 <body>
+<a href="index.php">back to main page</a>
 
 </body>
 </html>
