@@ -130,3 +130,7 @@ function deleteProject($postData, $db){
     $query->bindParam(':id', $project);
     $query->execute();
 }
+
+function getImagaes($db) {
+
+}
