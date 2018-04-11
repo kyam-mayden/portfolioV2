@@ -3,18 +3,18 @@ session_start();
 require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
 require_once('../php/imageUpload.php');
-editImage($_POST,$db);
+
+
+if(array_key_exists('deleteSelect', $_POST)){
+    echo deleteImage($_POST, $db);
+} elseif (array_key_exists('amendProject', $_POST)) {
+    editImage($_POST,$db);
+}
 
 $projectArray=portfolioList($db);
 $imageArray=getImages($db);
 $imageGet=getImageTable($db);
 $imageList=buildImageTable($imageGet);
-
-var_dump($_POST);
-
-//if(array_key_exists('deleteSelect', $_POST)){
-//
-//}
 
 ?>
 
@@ -39,7 +39,7 @@ var_dump($_POST);
     <label for="projectSelect">Select project</label>
     <select name="projectSelect"><?php echo makeDropDown($projectArray); ?>
     </select>
-    <input type="submit" name="deleteSelect">
+    <input type="submit" name="amendProject">
 </form>
 <h1>Upload a new image</h1>
 <form action="../php/imageUpload.php" method="post" enctype="multipart/form-data">
@@ -53,12 +53,12 @@ var_dump($_POST);
     <label for="project">Project</label>
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input type="submit" value="Upload Image" name="addImage">
 </form>
 <h1>Delete some shit</h1>
 <div>
     <form method="POST" action="images.php">
-        <label for="picSelect">Select project</label>
+        <label for="picSelect">Select image to delete</label>
         <select name="picSelect">
             <?php echo makeDropDown($imageArray); ?>
         </select>

@@ -175,5 +175,5 @@ function deleteImage($postData, $db){
         $query->bindParam(':id', $postData['picSelect']);
     }
     $query->execute();
-    return "project id:" .$postData['projectSelect'] . " deleted";
+    return "image id:" .$postData['picSelect'] . " deleted";
 }
