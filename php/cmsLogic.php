@@ -134,5 +134,14 @@ function deleteProject($postData, $db){
 }
 
 function getImages($db) {
+    $query=$db->prepare("SELECT `id`,`name`, `portfolioItem` AS 'selected' FROM `images`
+                         WHERE deleted=0;");
+    $query->execute();
+    return $query->fetchall();
+}
+
+
+function buildList($images, $projects) {
+    $string="";
 
 }
