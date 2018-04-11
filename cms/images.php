@@ -2,7 +2,7 @@
 session_start();
 require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
-
+require_once('../php/imageUpload.php');
 editImage($_POST,$db);
 
 $projectArray=portfolioList($db);
@@ -33,7 +33,17 @@ $imageArray=getImages($db);
     </select>
     <input type="submit" name="deleteSelect">
 </form>
-
 <h1>Upload a new image</h1>
+<form action="../php/imageUpload.php" method="post" enctype="multipart/form-data">
+    <label for="name">Image name</label>
+    <input type="text" name="name">
+    <label for="alt">Image alt</label>
+    <input type="text" name="alt">
+    <label for="project">Project</label>
+
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
 </body>
 </html>
