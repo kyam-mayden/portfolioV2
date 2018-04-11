@@ -134,16 +134,46 @@ function deleteProject($postData, $db){
 }
 
 function getImages($db) {
-    $query=$db->prepare("SELECT `id`,`name`, `portfolioItem` AS 'selected' FROM `images`
+    $query=$db->prepare("SELECT `id`,`name`, `portfolioItem` FROM `images`
                          WHERE deleted=0;");
     $query->execute();
     return $query->fetchall();
 }
-
 
 function editImage($postData, $db) {
     $query = $db->prepare("UPDATE `images` SET `portfolioItem`=:project WHERE `id`=:id;");
     $query->bindParam(':project', $postData['projectSelect']);
     $query->bindParam(':id', $postData['picSelect']);
     $query->execute();
+}
+
+function getImageTable($db) {
+    $query=$db->prepare("SELECT `images`.`name` AS 'image', `portfolio`.`name` AS 'project'
+                         FROM `images`
+                         LEFT JOIN `portfolio`
+                         ON `images`.`portfolioItem`
+                         =`portfolio`.`id`
+                         ;");
+    $query->execute();
+    return $query->fetchall();
+}
+
+function buildImageTable($images) {
+    $string="";
+    foreach ($images as $item) {
+        if($item['project'] == null) {
+            $item['project']="no project set";
+        }
+        $string .= "<p>" . $item['image'] ." - " . $item['project'] . "</p>";
+    };
+    return $string;
+}
+
+function deleteImage($postData, $db){
+    $query = $db->prepare("UPDATE `images` SET `deleted`=1 WHERE `id`=:id;");
+    if(array_key_exists('deleteSelect', $postData)) {
+        $query->bindParam(':id', $postData['picSelect']);
+    }
+    $query->execute();
+    return "project id:" .$postData['projectSelect'] . " deleted";
 }
