@@ -4,7 +4,6 @@ require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
 require_once('../php/imageUpload.php');
 
-
 if(array_key_exists('deleteSelect', $_POST)){
     echo deleteImage($_POST, $db);
 } elseif (array_key_exists('amendProject', $_POST)) {
