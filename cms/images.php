@@ -29,7 +29,9 @@ $imageList=buildImageTable($imageGet);
 </head>
 <body>
 <a href="index.php">back to main page</a>
+
 <?php echo $imageList?>
+
 <form action="images.php" method="POST">
     <h1>Edit an image/project association</h1>
     <label for="picSelect" >Select image</label>
@@ -40,8 +42,9 @@ $imageList=buildImageTable($imageGet);
     </select>
     <input type="submit" name="amendProject">
 </form>
+
 <h1>Upload a new image</h1>
-<form action="../php/imageUpload.php" method="post" enctype="multipart/form-data">
+<form action="images.php" method="post" enctype="multipart/form-data">
     <label for="projectSelect">Select project</label>
     <select name="projectSelect"><?php echo makeDropDown($projectArray); ?>
     </select>
@@ -54,6 +57,7 @@ $imageList=buildImageTable($imageGet);
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="addImage">
 </form>
+
 <h1>Delete some shit</h1>
 <div>
     <form method="POST" action="images.php">
