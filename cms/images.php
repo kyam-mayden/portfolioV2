@@ -2,9 +2,12 @@
 session_start();
 require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
+
+editImage($_POST,$db);
+
 $projectArray=portfolioList($db);
 $imageArray=getImages($db);
-//var_dump(getImages($db));
+
 
 ?>
 
@@ -20,12 +23,17 @@ $imageArray=getImages($db);
 </head>
 <body>
 <a href="index.php">back to main page</a>
-<form><label></label>
+<form action="images.php" method="POST">
+    <h1>Edit an image/project association</h1>
+    <label for="picSelect" >Select image</label>
     <select name="picSelect"><?php echo makeDropDown($imageArray); ?>
     </select>
-    <label></label>
+    <label for="projectSelect">Select project</label>
     <select name="projectSelect"><?php echo makeDropDown($projectArray); ?>
     </select>
+    <input type="submit" name="deleteSelect">
 </form>
+
+<h1>Upload a new image</h1>
 </body>
 </html>

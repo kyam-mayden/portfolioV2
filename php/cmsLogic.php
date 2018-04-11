@@ -141,7 +141,9 @@ function getImages($db) {
 }
 
 
-function buildList($images, $projects) {
-    $string="";
-
+function editImage($postData, $db) {
+    $query = $db->prepare("UPDATE `images` SET `portfolioItem`=:project WHERE `id`=:id;");
+    $query->bindParam(':project', $postData['projectSelect']);
+    $query->bindParam(':id', $postData['picSelect']);
+    $query->execute();
 }
