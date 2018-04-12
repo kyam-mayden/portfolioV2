@@ -3,7 +3,7 @@ session_start();
 require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
 
-$target_dir = "../assets/portfolio";
+$target_dir = "../assets/portfolio/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

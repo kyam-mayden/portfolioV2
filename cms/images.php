@@ -8,6 +8,8 @@ if(array_key_exists('deleteSelect', $_POST)){
     echo deleteImage($_POST, $db);
 } elseif (array_key_exists('amendProject', $_POST)) {
     editImage($_POST,$db);
+} elseif (array_key_exists('addImage',$_POST)){
+    addImage($_POST, $db, $target_file);
 }
 
 $projectArray=portfolioList($db);
@@ -68,5 +70,6 @@ $imageList=buildImageTable($imageGet);
         <input type="submit" name="deleteSelect">
     </form>
 </div>
+
 </body>
 </html>

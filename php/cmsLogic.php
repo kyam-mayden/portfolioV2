@@ -175,5 +175,16 @@ function deleteImage($postData, $db){
         $query->bindParam(':id', $postData['picSelect']);
     }
     $query->execute();
-    return "image id:" .$postData['picSelect'] . " deleted";
+//    return "image id:" .$postData['picSelect'] . " deleted";
+}
+
+function addImage($postData, $db, $target_file) {
+    $query = $db->prepare("INSERT INTO `images` (`path`,`name`,`alt`,`portfolioItem`)
+                    VALUES(:path, :name, :alt, :portfolioItem)");
+    $path = ltrim($target_file,"../");
+    $query -> bindParam(':path', $path);
+    $query -> bindParam(":name", $postData['name']);
+    $query -> bindParam(":alt", $postData['alt']);
+    $query -> bindParam(":portfolioItem", $postData['projectSelect']);
+    $query->execute();
 }
