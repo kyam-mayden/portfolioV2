@@ -56,10 +56,6 @@ if(!empty ($_POST['name'])
                 <label for="date">Creation date</label>
                 <input type="date" name="date" placeholder="Enter creation date">
             </div>
-<!--            <label for="picSelect">Select picture</label>-->
-<!--            <select name="picSelect">-->
-<!--                --><?php //echo makeDropDown($imgArr) ?>
-<!--            </select>-->
             <input type="submit">
         </form>
     </div>

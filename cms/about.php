@@ -52,4 +52,5 @@ $about2 = getAbout($db)[2];
         </div>
         <input type="submit">
     </form>
+///new form with showcase options//
 </body>

@@ -175,7 +175,7 @@ function deleteImage($postData, $db){
         $query->bindParam(':id', $postData['picSelect']);
     }
     $query->execute();
-//    return "image id:" .$postData['picSelect'] . " deleted";
+    return "image id:" .$postData['picSelect'] . " deleted";
 }
 
 function addImage($postData, $db, $target_file) {
@@ -187,4 +187,36 @@ function addImage($postData, $db, $target_file) {
     $query -> bindParam(":alt", $postData['alt']);
     $query -> bindParam(":portfolioItem", $postData['projectSelect']);
     $query->execute();
+}
+
+function getAcceptedSkills($db) {
+    $query = $db->prepare("SELECT `id`, `name` FROM `acceptedSkills`
+                           WHERE `deleted`=0;");
+    $query->execute();
+    return $query->fetchall();
+}
+
+function buildSkillList($skills) {
+    $string="";
+    foreach ($skills as $skill) {
+        $string.="<li>" . $skill['name'] . "</li>";
+    }
+    return $string;
+}
+
+function addSkill($postData, $db) {
+    $query = $db->prepare("INSERT INTO `acceptedSkills` (`name`)
+                          VALUES (:name);");
+    $query -> bindParam(':name', $postData['name']);
+    $query -> execute();
+
+}
+
+function deleteSkill($postData, $db){
+    $query = $db->prepare("UPDATE `acceptedSkills` SET `deleted`=1 WHERE `id`=:id;");
+    if(array_key_exists('deleteSelect', $postData)) {
+        $query->bindParam(':id', $postData['skillSelect']);
+    }
+    $query->execute();
+    return "skill id:" .$postData['picSelect'] . " deleted";
 }

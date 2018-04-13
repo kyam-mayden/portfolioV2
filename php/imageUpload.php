@@ -19,7 +19,7 @@ if(isset($_POST["addImage"])) {
     }
 }
 // Check if file already exists
-if (file_exists($target_file)) {
+if (file_exists($target_file) && (isset($_POST["addImage"]))) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
@@ -30,7 +30,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
+    && $imageFileType != "gif" && (isset($_POST["addImage"]))) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
 }
@@ -41,7 +41,7 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
+    } elseif (isset($_POST["addImage"])) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
