@@ -105,7 +105,8 @@ function getPortfolio($db) {
 function getSkills($db, $id) {
     $query=$db->prepare("SELECT `skill`
                          FROM `skills`
-                         WHERE `portfolioID` = $id;");
+                         WHERE `portfolioID` = $id
+                         && `deleted`=0;");
     $query->execute();
     return $query->fetchAll();
 }

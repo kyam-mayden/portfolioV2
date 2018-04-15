@@ -238,15 +238,27 @@ function buildSkillsChecklist($skills, $db, $postData) {
     foreach($skills as $skill) {
         if(in_array($skill['name'], $projectSkills)){
             $string.= "<div></div><label for='" . $skill['name'] . "'>" . $skill['name'] .
-                "</label><input id=" .$skill['name']. " type='checkbox' checked></div>";
+                "</label><input name=".$skill['name']. " id=" .$skill['name']. " type='checkbox' checked></div>";
         } else {
             $string.= "<div><label for='" . $skill['name'] . "'>" . $skill['name'] .
-                "</label><input id=" .$skill['name']. " type='checkbox'></div>";
+                "</label><input name=".$skill['name']. " id=" .$skill['name']. " type='checkbox'></div>";
         }
     }
     return $string;
 }
 
-function amendSkills() {
+function deleteSkills($postData, $db) {
+    $query = $db->prepare("UPDATE `skills` SET `deleted`=1 WHERE `portfolioID`=:id;");
+    $query->bindParam(':id', $postData['project']);
+    $query->execute();
+}
 
+function updateSkills($postData, $db) { //not adding to DB - not sure why
+    $project =$postData['project'];
+    forEach($postData as $key=>$value){
+        if($key!="project" && $key!="skillsChanges") {
+            $query = $db->prepare("INSERT INTO `skills`(`skill`,`portfolioID`) VALUES ($key, $project);");
+            $query -> execute();
+        }
+    }
 }

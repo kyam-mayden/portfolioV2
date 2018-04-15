@@ -7,8 +7,9 @@ if(array_key_exists('addSkill', $_POST)){
     addSkill($_POST, $db);
 } if(array_key_exists('deleteSelect', $_POST)){
     deleteSkill($_POST, $db);
-} if (array_key_exists('projectSelect', $_POST)){
-
+} if (array_key_exists('skillsChanges', $_POST)){
+//    deleteSkills($_POST, $db);
+    updateSkills($_POST, $db);
 }
 
 $projectArray=portfolioList($db);
@@ -16,7 +17,7 @@ $acceptedSkills=getAcceptedSkills($db);
 
 
 //var_dump(buildSkillsChecklist($acceptedSkills, $db, $_POST));
-//var_dump($_POST);
+var_dump($_POST);
 //var_dump(projectSkills($db, $_POST));
 //var_dump("||||||");
 //var_dump($acceptedSkills);
@@ -65,8 +66,9 @@ $acceptedSkills=getAcceptedSkills($db);
     <input type="submit" name="projectSelect">
 </form>
 
-<form>
+<form method="POST" action="skills.php">
     <ul class="checkBoxes">
+        <input type="hidden" name="project" value="<?php echo $_POST['id'] ?>">
         <?php echo buildSkillsChecklist($acceptedSkills, $db, $_POST) ?>
     </ul>
     <input type="submit" name="skillsChanges">
