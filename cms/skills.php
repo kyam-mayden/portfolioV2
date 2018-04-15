@@ -3,19 +3,26 @@ session_start();
 require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
 
-
-
-
 if(array_key_exists('addSkill', $_POST)){
     addSkill($_POST, $db);
 } if(array_key_exists('deleteSelect', $_POST)){
     deleteSkill($_POST, $db);
+} if (array_key_exists('projectSelect', $_POST)){
+
 }
 
+$projectArray=portfolioList($db);
+$acceptedSkills=getAcceptedSkills($db);
 
-$skills=getAcceptedSkills($db);
-var_dump($_POST);
+
+//var_dump(buildSkillsChecklist($acceptedSkills, $db, $_POST));
+//var_dump($_POST);
+//var_dump(projectSkills($db, $_POST));
+//var_dump("||||||");
+//var_dump($acceptedSkills);
+
 ?>
+
 
 
 <!doctype html>
@@ -31,7 +38,7 @@ var_dump($_POST);
 <body>
 <a href="index.php">back to main page</a>
 <ul><h1>List of accepted skills</h1>
-    <?php echo buildSkillList($skills);?>
+    <?php echo buildSkillList($acceptedSkills);?>
 </ul>
 <h1>Add a skill
 </h1>
@@ -43,14 +50,24 @@ var_dump($_POST);
 <h1>Delete a skill</h1>
 <form method="POST" action="skills.php">
     <label for="skillSelect" >Select image</label>
-    <select name="skillSelect"><?php echo makeDropDown($skills); ?>
+    <select name="skillSelect"><?php echo makeDropDown($acceptedSkills); ?>
     </select>
     <input type="submit" name="deleteSelect">
 </form>
 
+<h1>Add/remove skills from project</h1>
 
+<form method="POST" action="skills.php">
+    <label for="projectSelect">Select project</label>
+    <select name="id">
+        <?php echo makeDropDown($projectArray) ?>
+    </select>
+    <input type="submit" name="projectSelect">
+</form>
 
-
-assign skills to project in th is page
-
-<li>Name</li>
+<form>
+    <ul class="checkBoxes">
+        <?php echo buildSkillsChecklist($acceptedSkills, $db, $_POST) ?>
+    </ul>
+    <input type="submit" name="skillsChanges">
+</form>

@@ -56,7 +56,7 @@ function getImgDropDown (PDO $db):array {
 function makeDropDown (array $items): string {
     $dropDownString = "";
     foreach ($items as $item) {
-        $dropDownString .= '<option value="' . $item['id'] . '">' . $item['name'] . '</option>';
+        $dropDownString .= "<option value=" . $item['id'] . ">" . $item['name'] . "</option>";
     }
     return $dropDownString;
 }
@@ -219,4 +219,34 @@ function deleteSkill($postData, $db){
     }
     $query->execute();
     return "skill id:" .$postData['picSelect'] . " deleted";
+}
+
+function projectSkills($db, $postData) {
+    $skills = getSkills($db, $postData['id']);
+    $skillArray=[];
+    foreach($skills as $skill){
+        foreach($skill as $key => $value){
+            array_push($skillArray, $value);
+        }
+    }
+    return $skillArray;
+}
+
+function buildSkillsChecklist($skills, $db, $postData) {
+    $projectSkills = projectSkills($db, $postData);
+    $string="";
+    foreach($skills as $skill) {
+        if(in_array($skill['name'], $projectSkills)){
+            $string.= "<div></div><label for='" . $skill['name'] . "'>" . $skill['name'] .
+                "</label><input id=" .$skill['name']. " type='checkbox' checked></div>";
+        } else {
+            $string.= "<div><label for='" . $skill['name'] . "'>" . $skill['name'] .
+                "</label><input id=" .$skill['name']. " type='checkbox'></div>";
+        }
+    }
+    return $string;
+}
+
+function amendSkills() {
+
 }
