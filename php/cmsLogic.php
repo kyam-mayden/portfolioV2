@@ -153,7 +153,7 @@ function getImageTable($db) {
                          LEFT JOIN `portfolio`
                          ON `images`.`portfolioItem`
                          =`portfolio`.`id`
-                         ;");
+                         WHERE `images`.`deleted` =0;");
     $query->execute();
     return $query->fetchall();
 }

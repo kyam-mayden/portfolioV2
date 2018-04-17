@@ -31,7 +31,7 @@ $imageList=buildImageTable($imageGet);
 </head>
 <body>
 <a href="index.php">back to main page</a>
-
+Project -- Image
 <?php echo $imageList?>
 
 <form action="images.php" method="POST">
