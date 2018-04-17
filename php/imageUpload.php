@@ -24,7 +24,7 @@ if (file_exists($target_file) && (isset($_POST["addImage"]))) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 800000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }

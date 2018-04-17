@@ -254,11 +254,12 @@ function deleteSkills($postData, $db) {
 }
 
 function updateSkills($postData, $db) { //not adding to DB - not sure why
-    $project =$postData['project'];
     forEach($postData as $key=>$value){
         if($key!="project" && $key!="skillsChanges") {
-            $query = $db->prepare("INSERT INTO `skills`(`skill`,`portfolioID`) VALUES ($key, $project);");
-            $query -> execute();
+            $query = $db->prepare("INSERT INTO `skills`(`skill`,`portfolioID`) VALUES (:skill, :project);");
+            $query->bindParam(':skill', $key);
+            $query->bindParam(':project', $postData['project']);
+            $query->execute();
         }
     }
 }
