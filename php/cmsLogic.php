@@ -263,3 +263,5 @@ function updateSkills($postData, $db) { //not adding to DB - not sure why
         }
     }
 }
+
+

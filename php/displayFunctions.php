@@ -138,7 +138,7 @@ function buildPortfolio($db) {
                 <img src=". $item['path'] ." alt=' ". $item['alt'] ."'>
                 <form method='get' action='focus.php'>
     <input type='hidden' name='id' value=". $item['id']. ">
-    <input class='focusBuilder' type=\"submit\" value=". $item['name'] .">
+    <input class='focusBuilder' type=\"submit\" value='". $item['name'] ."'>
 </form>
                 <p class=\"skillList\">". buildSkills($db,$item['id']) ."
                 </p>

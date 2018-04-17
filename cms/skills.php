@@ -16,12 +16,6 @@ $projectArray=portfolioList($db);
 $acceptedSkills=getAcceptedSkills($db);
 
 
-//var_dump(buildSkillsChecklist($acceptedSkills, $db, $_POST));
-//var_dump($_POST);
-//var_dump(projectSkills($db, $_POST));
-//var_dump("||||||");
-//var_dump($acceptedSkills);
-
 ?>
 
 

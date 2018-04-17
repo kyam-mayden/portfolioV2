@@ -2,6 +2,17 @@
 session_start();
 require_once('../php/displayFunctions.php');
 require_once('../php/cmsLogic.php');
+require('../php/adminFunctions.php');
+
+session_start();
+//var_dump($_SESSION);
+
+//$_SESSION['loggedIn']=logIn($_POST['username'],$_POST['password'],$db);
+
+//ifLoggedIn($_SESSION['loggedIn']);
+
+//var_dump(password_hash('test',PASSWORD_BCRYPT));
+
 ?>
 
 <!DOCTYPE html>
