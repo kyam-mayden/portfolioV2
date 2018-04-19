@@ -48,6 +48,9 @@ require_once('php/displayFunctions.php');
     <section class="gridContainer">
         <?php echo buildPortfolio($db) ?>
     </section>
+    <footer>
+        <a href="login.php">Admin login</a>
+    </footer>
 </main>
 </body>
 </html>

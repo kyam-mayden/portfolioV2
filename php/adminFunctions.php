@@ -12,7 +12,7 @@ $db = connectDatabase();
  * @return boolean result to confirm passwords match
  */
 function pullAndComparePasswords(string $enteredPassword, string $enteredUName, PDO $db):bool {
-    $query = $db->prepare("SELECT `password` FROM `users` WHERE `user` = :uName;");
+    $query = $db->prepare("SELECT `password` FROM `users` WHERE `email` = :uName;");
     $query->bindParam(':uName', $enteredUName);
     $query->execute();
     $passwordDB = $query->fetch();
@@ -27,9 +27,9 @@ function stripPassword(string $password):string {
 
 function ifLoggedIn($loggedIn) {
     if ($loggedIn) {
-        header('Location:../cms/index.php');
+        header('Location:cms/index.php');
     } else {
-        header('Location: ../login.php');
+        header('Location: login.php');
     }
 }
 
