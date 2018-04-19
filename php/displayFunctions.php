@@ -12,8 +12,11 @@ function connectDatabase():PDO {
 $db = connectDatabase();
 
 /**
- * @param $db
- * @return mixed
+ * Get statis content from DB
+ *
+ * @param PDO $db
+ *
+ * @return array of static content
  */
 function getStatic(PDO $db):array {
     $query=$db->prepare("SELECT `name`,`content` FROM `static`;");
@@ -22,7 +25,10 @@ function getStatic(PDO $db):array {
 }
 
 /**
- * @param $db
+ * Takes static array and reassigned keys & values to new array
+ *
+ * @param PDO $db
+ *
  * @return array
  */
 function fillStatic(PDO $db):array {
@@ -35,10 +41,13 @@ function fillStatic(PDO $db):array {
 }
 
 /**
- * @param $db
- * @return mixed
+ * Get showcase projects data
+ *
+ * @param PDO $db
+ *
+ * @return array projects data
  */
-function getShowcase($db) {
+function getShowcase(PDO $db):array {
     $query=$db->prepare("SELECT `portfolio`.`id`,`portfolio`.`name`,`portfolio`.`url`,`portfolio`.`description`,`portfolio`.`github`,`portfolio`.`date`, `images`.`path`, `images`.`alt`
                          FROM `featured`
                          LEFT JOIN `portfolio`
@@ -56,10 +65,13 @@ function getShowcase($db) {
 };
 
 /**
- * @param $db
- * @return string
+ * Builds HTML elements for project showcase
+ *
+ * @param PDO $db
+ *
+ * @return string HTML elements to display showcase
  */
-function buildShowcase($db) {
+function buildShowcase(PDO $db):string {
     $string="";
     $array = getShowcase($db);
     foreach ($array as $showcase) {
@@ -81,10 +93,13 @@ function buildShowcase($db) {
 }
 
 /**
- * @param $db
- * @return mixed
+ * Gets all non-deleted projects
+ *
+ * @param PDO $db
+ *
+ * @return array of projects
  */
-function getPortfolio($db) {
+function getPortfolio(PDO $db):array {
     $query=$db->prepare("SELECT `portfolio`.`id`,`portfolio`.`name`,`images`.`path`, `images`.`alt`
                          FROM `portfolio`
                          LEFT JOIN `images`
@@ -98,11 +113,14 @@ function getPortfolio($db) {
 }
 
 /**
- * @param $db
- * @param $id
- * @return mixed
+ * Gets skills for selected project
+ *
+ * @param PDO $db
+ * @param int $id user selection
+ *
+ * @return array project skills
  */
-function getSkills($db, $id) {
+function getSkills(PDO $db,int $id):array {
     $query=$db->prepare("SELECT `skill`
                          FROM `skills`
                          WHERE `portfolioID` = $id
@@ -112,11 +130,14 @@ function getSkills($db, $id) {
 }
 
 /**
- * @param $db
- * @param $id
- * @return bool|string
+ * Builds list of skills to display as string
+ *
+ * @param PDO $db
+ * @param int $id user selection
+ *
+ * @return string of skills
  */
-function buildSkills($db, $id) {
+function buildSkills(PDO $db,int $id):string {
     $string="";
     foreach(getSkills($db,$id) as $skill) {
         $string.=$skill['skill'].", ";
@@ -126,10 +147,13 @@ function buildSkills($db, $id) {
 
 
 /**
- * @param $db
- * @return string
+ * Builds HTML element for each project for display
+ *
+ * @param PDO $db
+ *
+ * @return string of HTML elements
  */
-function buildPortfolio($db) {
+function buildPortfolio(PDO $db):string {
     $portfolio = getPortfolio($db);
     $string="";
     foreach($portfolio as $item) {
@@ -149,11 +173,14 @@ function buildPortfolio($db) {
 }
 
 /**
- * @param $db
- * @param $id
- * @return mixed
+ * Build focus for selected project
+ *
+ * @param PDO $db
+ * @param int $id user selection
+ *
+ * @return array of project data
  */
-function buildFocus($db, $id) {
+function buildFocus(PDO $db,int $id):array {
     $query=$db->prepare("SELECT `portfolio`.`id`,`portfolio`.`name`,`portfolio`.`description`,`images`.`path`, `images`.`alt`,`portfolio`.`github`,`portfolio`.`url`,`portfolio`.`date`
                          FROM `portfolio`
                          LEFT JOIN `images`

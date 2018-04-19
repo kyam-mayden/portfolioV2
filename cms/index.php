@@ -5,13 +5,7 @@ require_once('../php/cmsLogic.php');
 require('../php/adminFunctions.php');
 
 session_start();
-//var_dump($_SESSION);
 
-//$_SESSION['loggedIn']=logIn($_POST['username'],$_POST['password'],$db);
-
-//ifLoggedIn($_SESSION['loggedIn']);
-
-//var_dump(password_hash('test',PASSWORD_BCRYPT));
 
 ?>
 
@@ -29,5 +23,6 @@ session_start();
     <a href="images.php">Sort out some images</a>
     <a href="portfolioDelete.php">Delete some shit</a>
     <a href="skills.php">un fuck-up the skills section</a>
+    <a href="../logOut.php">Log out</a>
 </body>
 </html>

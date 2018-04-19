@@ -19,13 +19,24 @@ function pullAndComparePasswords(string $enteredPassword, string $enteredUName, 
     return password_verify($enteredPassword, $passwordDB['password']);
 }
 
+/**
+ * Gets the user-entered password and removes harmful characters
+ *
+ * @param string $password password
+ * @return string cleansed password
+ */
 function stripPassword(string $password):string {
     $string1 = trim($password);
     $string2 = htmlspecialchars($string1);
     return stripslashes($string2);
 }
 
-function ifLoggedIn($loggedIn) {
+/**
+ * Redirects user based on log in success
+ *
+ * @param $loggedIn boolean from pullAndComparePasswords function
+ */
+function ifLoggedIn(bool $loggedIn) {
     if ($loggedIn) {
         header('Location:cms/index.php');
     } else {
@@ -33,7 +44,15 @@ function ifLoggedIn($loggedIn) {
     }
 }
 
-function logIn($username, $password, $db) {
+/**
+ * Returns boolean after cleansing and checking user inputs
+ *
+ * @param $username string user input
+ * @param $password string user input
+ * @param $db PDO
+ * @return bool if password and username match database
+ */
+function logIn(string $username, string $password, $db):bool {
     $password = stripPassword($password);
     $return = false;
     if (pullAndComparePasswords($password, $username, $db)) {
