@@ -20,7 +20,7 @@ class StackTest extends TestCase
     //malformed
     public function testDropDownMalformed ()
     {
-        $input1 = 5554;
+        $input1 = ['string', 'string2', 1,2,3,4];
         $this->expectException(TypeError::class);
         makeDropDown($input1);
     }
