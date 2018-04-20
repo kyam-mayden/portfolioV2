@@ -40,10 +40,6 @@ require_once('php/displayFunctions.php');
         <h1 id="portfolioTitle">
             Portfolio
         </h1>
-<!--        <form name="search" class="searchBar">-->
-<!--            <input type="text" id ="skillsSearch" placeholder="Search by skill..." />-->
-<!--            <input type="submit">-->
-<!--        </form>-->
     </div>
     <section class="gridContainer">
         <?php echo buildPortfolio($db) ?>

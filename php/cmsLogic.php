@@ -145,9 +145,9 @@ function portfolioList (PDO $db):array {
  * @param array $postData user selection
  * @param PDO $db
  *
- * @return array of project data
+ * @return array of project data, or boolean if no selection
  */
-function getProject(array $postData,PDO $db):array {
+function getProject(array $postData,PDO $db) {
     $query = $db->prepare("SELECT `id`,`name`,`url`,`description`,`github`,`date` 
                            FROM `portfolio` WHERE `id` = :id;");
     $query->bindParam(':id', $postData['projectSelect']);

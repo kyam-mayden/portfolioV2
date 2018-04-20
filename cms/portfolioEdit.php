@@ -8,7 +8,14 @@ if(array_key_exists('submitEdit', $_POST)) {
 }
 
 $projectArray=portfolioList($db);
-$projectFill=getProject($_POST,$db);
+
+if(gettype(getProject($_POST,$db))==='array') {
+    $projectFill=getProject($_POST,$db);
+} else {
+    $projectFill=null;
+}
+
+
 ?>
 
 <!DOCTYPE html>
