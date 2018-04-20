@@ -9,7 +9,7 @@ class StackTest extends TestCase
     //strip Password
     //success
 
-    public function stripPasswordSuccess ()
+    public function teststripPasswordSuccess ()
     {
         $input = '  &passWord$';
         $expected = '&amp;passWord&dollar;';

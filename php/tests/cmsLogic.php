@@ -6,22 +6,22 @@ require_once('../cmsLogic.php');
 
 class StackTest extends TestCase
 {
-    //sanitize string
+    //sanitizeString
     //success
 
-    public function sanitizeStringSuccess ()
+    public function testsanitizeStringSuccess ()
     {
         $input = '  &passWord$';
         $expected = '&amp;passWord&dollar;';
-        $case = stripPassword($input);
+        $case = sanitizeString($input);
         $this->assertEquals($case, $expected);
     }
 
-    public function sanitizeStringFailure ()
+    public function testsanitizeStringFailure ()
     {
         $input = 55412;
         $expected = "";
-        $case = stripPassword($input);
+        $case = sanitizeString($input);
         $this->assertEquals($case, $expected);
     }
 
@@ -30,7 +30,45 @@ class StackTest extends TestCase
     {
         $input1 =  ['string', 'string2', 1,2,3,4];
         $this->expectException(TypeError::class);
-        makeDropDown($input1);
+        sanitizeString($input1);
     }
+
+
+    //sanitizeURL
+    //success
+    public function testsanitizeUrlSuccess ()
+    {
+        $input = '  <testurl##]]';
+        $expected = 'testurl';
+        $case = sanitizeUrl($input);
+        $this->assertEquals($case, $expected);
+    }
+
+    //failure
+    public function testsanitizeUrlFailure ()
+    {
+        $input = 779898;
+        $expected = 779898;
+        $case = sanitizeUrl($input);
+        $this->assertEquals($case, $expected);
+    }
+
+    public function testsanitizeUrlMalformed ()
+    {
+        $input1 =  ['string', 'string2', 1,2,3,4];
+        $this->expectException(TypeError::class);
+        sanitizeString($input1);
+    }
+
+
+    //sanitizeNum
+
+    //makeDropDown
+
+    //buildImageTable
+
+    //buildSkillList
+
+    //
 
 }
