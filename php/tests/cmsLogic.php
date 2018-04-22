@@ -89,11 +89,56 @@ class StackTest extends TestCase
     }
 
     //makeDropDown
+    //success
+    public function testmakeDropDownSuccess ()
+    {
+        $input = [['id'=>1, 'name'=>'one'],['id'=>2, 'name'=>'two']];
+        $expected = "<option value= 1 >'one'</option><option value=2>'two'</option>";
+        $case = makeDropDown($input);
+        $this->assertEquals($case, $expected);
+    }
+
+    //malformed
+    public function testmakeDropDownMalformed ()
+    {
+        $input1 =  ['string', 'string2', 1,2,3,4];
+        $this->expectException(TypeError::class);
+        makeDropDown($input1);
+    }
 
     //buildImageTable
+    //success
+    public function testbuildImageTableSuccess ()
+    {
+        $input = [['image'=>'pic1', 'project'=>'proj1'],['image'=>'pic2', 'project'=>'proj2']];
+        $expected = "<p>pic1 - project1</p><p>pic2 - project2</p>";
+        $case = buildImageTable($input);
+        $this->assertEquals($case, $expected);
+    }
+
+    //malformed
+    public function testbuildImageTableMalformed ()
+    {
+        $input1 =  ['string', 'string2', 1,2,3,4];
+        $this->expectException(TypeError::class);
+        buildImageTable($input1);
+    }
 
     //buildSkillList
-
-    //
+    //success
+    public function testbuildSkillListSuccess ()
+    {
+        $input = [['name'=>'skill1'],['name'=>'skill2']];
+        $expected = "<li>skill1</li><li>skill2</li>";
+        $case = buildImageTable($input);
+        $this->assertEquals($case, $expected);
+    }
+    //malformed
+    public function testbuildSkillListMalformed ()
+    {
+        $input1 =  [];
+        $this->expectException(TypeError::class);
+        buildSkillList($input1);
+    }
 
 }
