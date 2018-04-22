@@ -167,7 +167,7 @@ function buildPortfolio(PDO $db):string {
                   <p class=\"skillList\">". buildSkills($db,$item['id']) ."
                   </p>
                   </div>
-                  </article>";
+        </article>";
     }
     return $string;
 }

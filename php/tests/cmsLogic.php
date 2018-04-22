@@ -52,7 +52,7 @@ class StackTest extends TestCase
         $case = sanitizeUrl($input);
         $this->assertEquals($case, $expected);
     }
-
+    //malformed
     public function testsanitizeUrlMalformed ()
     {
         $input1 =  ['string', 'string2', 1,2,3,4];
@@ -62,6 +62,31 @@ class StackTest extends TestCase
 
 
     //sanitizeNum
+    //success
+    public function testsanitizeNumSuccess ()
+    {
+        $input = 334533;
+        $expected = 334533;
+        $case = sanitizeNum($input);
+        $this->assertEquals($case, $expected);
+    }
+
+    //failure
+    public function testsanitizeNumFailure ()
+    {
+        $input = 50.3;
+        $expected = 50;
+        $case = sanitizeNum($input);
+        $this->assertEquals($case, $expected);
+    }
+
+    //malformed
+    public function testsanitizeNumMalformed ()
+    {
+        $input1 =  ['string', 'string2', 1,2,3,4];
+        $this->expectException(TypeError::class);
+        sanitizeNum($input1);
+    }
 
     //makeDropDown
 
