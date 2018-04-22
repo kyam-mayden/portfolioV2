@@ -61,31 +61,31 @@ class StackTest extends TestCase
     }
 
 
-    //sanitizeNum
+    //sanitizeInt
     //success
-    public function testsanitizeNumSuccess ()
+    public function testsanitizeIntSuccess ()
     {
         $input = 334533;
         $expected = 334533;
-        $case = sanitizeNum($input);
+        $case = sanitizeInt($input);
         $this->assertEquals($case, $expected);
     }
 
     //failure
-    public function testsanitizeNumFailure ()
+    public function testsanitizeIntFailure ()
     {
         $input = 50.3;
         $expected = 50;
-        $case = sanitizeNum($input);
+        $case = sanitizeInt($input);
         $this->assertEquals($case, $expected);
     }
 
     //malformed
-    public function testsanitizeNumMalformed ()
+    public function testsanitizeIntMalformed ()
     {
         $input1 =  ['string', 'string2', 1,2,3,4];
         $this->expectException(TypeError::class);
-        sanitizeNum($input1);
+        sanitizeInt($input1);
     }
 
     //makeDropDown

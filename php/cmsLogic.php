@@ -2,7 +2,8 @@
 require_once('../php/displayFunctions.php');
 
 $db = connectDatabase();
-
+$_SESSION['errorMessage'] = "";
+echo $_SESSION['errorMessage'];
 /**
  * applies string sanitizer to input
  *
@@ -11,7 +12,11 @@ $db = connectDatabase();
  * @return string sanitized
  */
 function sanitizeString(string $string): string{
-    return filter_var($string, FILTER_SANITIZE_STRING);
+    if (gettype($string)=='string') {
+        return filter_var($string, FILTER_SANITIZE_STRING);
+        } else {
+        $_SESSION['errorMessage'] = "entered string not valid";
+    };
 }
 
 /**
@@ -22,18 +27,26 @@ function sanitizeString(string $string): string{
  * @return string
  */
 function sanitizeUrl(string $url):string {
-    return filter_var($url, FILTER_SANITIZE_URL);
+    if(filter_var($url, FILTER_VALIDATE_URL)) {
+        return filter_var($url, FILTER_SANITIZE_URL);
+        } else {
+        $_SESSION['errorMessage'] = "entered url not valid";
+    };
 }
 
 /**
  * applies sanitizer to number
  *
- * @param $num integer/float to sanitize
+ * @param $num integer to sanitize
  *
- * @return integer/float
+ * @return integer
  */
-function sanitizeNum($num) {
+function sanitizeInt($num) {
+    if (gettype($string)=='integer') {
     return filter_var($num, FILTER_SANITIZE_NUMBER_INT);
+        } else {
+        $_SESSION['errorMessage'] = "entered number not valid";
+    };
 }
 
 /**
@@ -164,7 +177,7 @@ function getProject(array $postData,PDO $db) {
 function updateProject(array $postData,PDO $db) {
     $query = $db->prepare("REPLACE `portfolio` (`id`,`name`,`url`,`description`,`github`,`date`)
                           VALUES(:id, :name, :url, :description, :github, :date);");
-    $query->bindValue(':id', sanitizeNum($postData['id']));
+    $query->bindValue(':id', sanitizeInt($postData['id']));
     if(array_key_exists('name',$postData)) {
         $query->bindValue(':name', sanitizeString($postData['name']));
     };
