@@ -20,9 +20,9 @@ session_start();
     <a href="about.php">Edit About section</a>
     <a href="portfolioAdd.php">Add a project</a>
     <a href="portfolioEdit.php">Edit a project</a>
-    <a href="images.php">Sort out some images</a>
-    <a href="portfolioDelete.php">Delete some shit</a>
-    <a href="skills.php">un fuck-up the skills section</a>
+    <a href="images.php">Add & assign images</a>
+    <a href="portfolioDelete.php">Delete some project</a>
+    <a href="skills.php">Assign & add skills</a>
     <a href="../logOut.php">Log out</a>
 </body>
 </html>
