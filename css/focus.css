@@ -1,0 +1,92 @@
+
+.focusItem .portfolioImg{
+    height: 400px;
+    width: 400px;
+}
+
+.focusText{
+    display:inline-block;
+    width: 45%;
+    height: 400px;
+    float:right;
+}
+
+.focusItem .portfolioImg,
+.focusItem .focusText {
+    display: inline-block;
+    text-align:left;
+}
+
+.focusItem{
+    text-align:center;
+}
+
+.focusText .description{
+    font-size:1.7rem;
+}
+
+.portfolioGithub img{
+    height: 50px;
+    width: 50px;
+}
+
+.links{
+    height: 60px;
+    width:200px;
+    margin:10px auto;
+}
+
+.links a{
+    margin: 0 30px;
+    text-decoration: none;
+}
+
+#title{
+    margin-bottom: 20px;
+    font-size:3rem;
+}
+
+@media screen and (max-width:993px) {
+    .focusItem .portfolioImg,
+    div.focusText{
+        width:300px;
+        height:300px;
+    }
+
+    .focusText .description{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .focusItem .portfolioImg{
+        width: 400px;
+        height:400px;
+    }
+
+    .focusItem .focusText {
+        width: 100%;
+    }
+
+    .focusText .skills{
+        font-size: 2rem;
+    }
+
+    .focusItem .focusText .description {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .focusItem .portfolioImg {
+        width: 300px;
+        height: 300px;
+    }
+    nav .interiorLinks a{
+        font-size:2.5rem;
+    }
+
+    .focusText .skills{
+        max-height: 200px;
+    }
+}
